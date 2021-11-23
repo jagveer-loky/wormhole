@@ -26,7 +26,7 @@ public final class CodeDataNodeTest {
     
     @Test
     public void assertNewInstance() {
-        WormholeDataNode<String> wormholeDataNode = new CodeDataNode("column", "column comment", DataNodeType.NATIVE);
+        WormholeDataNode wormholeDataNode = new CodeDataNode("column", "value", DataNodeType.NATIVE, "test column");
         assertNotNull(wormholeDataNode);
     }
 }

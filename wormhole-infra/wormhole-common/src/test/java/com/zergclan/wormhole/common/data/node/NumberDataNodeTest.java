@@ -15,29 +15,18 @@
  * limitations under the License.
  */
 
-package com.zergclan.wormhole.pipeline.handler;
+package com.zergclan.wormhole.common.data.node;
 
-import com.zergclan.wormhole.common.data.node.AbstractTextDataNode;
-import com.zergclan.wormhole.common.data.node.StringDataNode;
 import com.zergclan.wormhole.common.data.node.type.DataNodeType;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public final class NullToEmptyHandlerTest {
-    
-    private static WormholeHandler<AbstractTextDataNode> wormholeHandler;
-    
-    @BeforeAll
-    public static void init() {
-        wormholeHandler = new NullToEmptyHandler();
-    }
+public final class NumberDataNodeTest {
     
     @Test
-    public void assertHandler() {
-        AbstractTextDataNode node = new StringDataNode("column", "comment", DataNodeType.NATIVE);
-        node = wormholeHandler.handler(node);
-        assertEquals("", node.getValue());
+    public void assertNewInstance() {
+        WormholeDataNode wormholeDataNode = new NumberDataNode("column", 1, DataNodeType.NATIVE, "");
+        assertNotNull(wormholeDataNode);
     }
 }

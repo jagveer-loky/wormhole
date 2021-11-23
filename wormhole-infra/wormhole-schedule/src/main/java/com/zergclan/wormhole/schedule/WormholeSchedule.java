@@ -15,23 +15,10 @@
  * limitations under the License.
  */
 
-package com.zergclan.wormhole.pipeline.handler;
-
-import com.zergclan.wormhole.common.data.node.WormholeDataNode;
-import com.zergclan.wormhole.pipeline.WormholeFilter;
+package com.zergclan.wormhole.schedule;
 
 /**
- * The root interface from which all data node handler objects shall be derived in Wormhole.
- *
- * @param <V> class type of data node
+ * Schedule identification interface of Wormhole.
  */
-public interface WormholeHandler<V extends WormholeDataNode<?>> extends WormholeFilter {
-    
-    /**
-     * Handler data node.
-     *
-     * @param dataNode data node
-     * @return data node
-     */
-    V handler(V dataNode);
+public interface WormholeSchedule {
 }

@@ -18,9 +18,9 @@
 package com.zergclan.wormhole.common.exception;
 
 /**
- * Exception of Wormhole.
+ * Basic exception of Wormhole.
  */
-public final class WormholeException extends RuntimeException {
+public abstract class WormholeException extends RuntimeException {
     
     /**
      * Constructs an exception with formatted error message and args.
@@ -28,7 +28,7 @@ public final class WormholeException extends RuntimeException {
      * @param errorMessage formatted error message
      * @param args args of error message
      */
-    public WormholeException(final String errorMessage, final Object... args) {
+    protected WormholeException(final String errorMessage, final Object... args) {
         super(String.format(errorMessage, args));
     }
     
@@ -37,7 +37,7 @@ public final class WormholeException extends RuntimeException {
      *
      * @param cause error cause
      */
-    public WormholeException(final Throwable cause) {
+    protected WormholeException(final Throwable cause) {
         super(cause);
     }
     
@@ -47,7 +47,7 @@ public final class WormholeException extends RuntimeException {
      * @param message error message
      * @param cause error cause
      */
-    public WormholeException(final String message, final Throwable cause) {
+    protected WormholeException(final String message, final Throwable cause) {
         super(message, cause);
     }
 }

@@ -25,15 +25,17 @@ import lombok.RequiredArgsConstructor;
  * Data node type of date.
  */
 @RequiredArgsConstructor
-public final class DateDataNode extends AbstractTextDataNode {
+public final class DateDataNode implements WormholeDataNode {
     
     private static final long serialVersionUID = -8351606898344714382L;
     
     private final String column;
     
-    private final String comment;
+    private final String value;
     
     private final DataNodeType dataNodeType;
     
     private final DatePatternType pattern;
+    
+    private final String comment;
 }
